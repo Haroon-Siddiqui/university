@@ -1,0 +1,11 @@
+# Ignore Windows executable compiled files
+*.exe
+
+# Ignore compiled object files
+*.o
+*.obj
+
+# Ignore compiler local configuration cache
+.vscode/
+*.layout
+*.depend

@@ -7,14 +7,15 @@ int main()
     system ("color 02");
 
    // main shape (Ben 10)
-cout <<"       ________     " <<endl; 
+ 
+cout <<"       /\\/\\/\\/\\ " <<endl;
 cout <<"       |      |     " <<endl;
-cout <<"       | '  ' |     " <<endl;
+cout <<"      (| '  ' |)    " <<endl;
 cout <<"       | \\__/ |    " <<endl;
 cout <<"     __|______|__   " <<endl;
 cout <<"    | ||      || |  " <<endl;
 cout <<"    | ||  10  || |  " <<endl;
-cout <<"    | ||      |[X]  " <<endl;
+cout <<"    |_||      |[X]  " <<endl;
 cout <<"    |_||______||_|  " <<endl;
 cout <<"       | |  | |     " <<endl;
 cout <<"       | |  | |     " <<endl;
@@ -26,7 +27,8 @@ cout <<"      /__|  |__\\   " <<endl;
 cout <<endl<<endl;
 cout <<"\t\t\t\a Ben 10"<<endl;
 cout <<"\t\t\t\a Made by"<<endl;
-cout <<"\t\t\t\a      Roll 93"<<endl;
+cout <<"\t\t\t\a      Roll No.93"<<endl;
 
 return 0;
 }
+

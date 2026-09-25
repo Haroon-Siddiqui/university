@@ -2,11 +2,11 @@
 using namespace std;
 
 int main()
-{   
+{   //colour and cls command
     system ("  cls   ");
     system ("color 02");
 
-
+   // main shape (Ben 10)
 cout <<"       ________     " <<endl; 
 cout <<"       |      |     " <<endl;
 cout <<"       | '  ' |     " <<endl;
@@ -21,8 +21,12 @@ cout <<"       | |  | |     " <<endl;
 cout <<"       | |  | |     " <<endl;
 cout <<"       |_|  |_|     " <<endl;
 cout <<"      /__|  |__\\   " <<endl;
+
+//sign and shape
+cout <<endl<<endl;
+cout <<"\t\t\t\a Ben 10"<<endl;
 cout <<"\t\t\t\a Made by"<<endl;
-cout <<"\t\t\t\t\a Roll 93"<<endl;
+cout <<"\t\t\t\a      Roll 93"<<endl;
 
 return 0;
 }

@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-main(){
+int main(){
     // Program output print
 cout<<"                **                 "<<endl;
 cout<<"               *  *                "<<endl;

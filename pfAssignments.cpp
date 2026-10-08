@@ -1,3 +1,4 @@
+// Header files
 #include <iostream>
 #include <string>
 
@@ -16,6 +17,9 @@ void evenOdd();
 void discountCalc();
 void fuelCalculator2();
 void discountCalculator2();
+void infiniteCalculator();
+void infiniteNamePrint();
+void infiniteDiscountCalculator();
 
 
 // Main Function
@@ -73,18 +77,18 @@ while(repeatProgram=='y')
     {
         discountCalculator2();
     }
-    // else if (userSelection == 11)
-    // {
-    //     return 0;
-    // }
-    // else if (userSelection == 12)
-    // {
-    //     return 0;
-    // }
-    // else if (userSelection == 13)
-    // {
-    //     return 0;
-    // }
+    else if (userSelection == 11)
+    {
+        infiniteCalculator();
+    }
+    else if (userSelection == 12)
+    {
+        infiniteNamePrint();
+    }
+    else if (userSelection == 13)
+    {
+        infiniteDiscountCalculator();
+    }
     // else if (userSelection == 14)
     // {
     //     return 0;
@@ -100,6 +104,7 @@ while(repeatProgram=='y')
 return 0;
 }
 
+// Functions Declerations
 void userInterface(int &userSelection)
 {
     bool condition=true;
@@ -115,13 +120,13 @@ void userInterface(int &userSelection)
     cout<<"Enter 8  for Discount Calculator \n";
     cout<<"Enter 9  for fuel calculator 2.0 \n";
     cout<<"Enter 10 for Discount Calculator 2.0 \n";
-    // cout<<"Enter 11 for _________ \n";
-    // cout<<"Enter 12 for _________ \n";
-    // cout<<"Enter 13 for _________ \n";
+    cout<<"Enter 11 for Infinite-Calcilator \n";
+    cout<<"Enter 12 for infinite-Name Printing \n";
+    cout<<"Enter 13 for infinite-Discount Calculator \n";
     // cout<<"Enter 14 for _________ \n";
     cout<<"Enter Here:  ";
     cin >> userSelection;
-    if (cin.fail() || userSelection < 1 || userSelection > 10)
+    if (cin.fail() || userSelection < 1 || userSelection > 13)
        {
          condition = true;
          cout <<"\n\n Invalid Input! \n\n";
@@ -376,11 +381,128 @@ void discountCalculator2()
         cout <<"Payable Amount: "<< payable2;
     }
 }
+void infiniteCalculator()
+{
+    float x , y;
+    
+    char op ;  
+        cout <<"=================================\n";
+        cout <<"WARNING! This Program is infinite\n";
+        cout <<"Press Ctrl + c to froce close\n";
+        cout <<"=================================\n\n";
+while(1)
+    {
+  
+    cout << "Enter Two Numbers : ";
+    
+    cin >> x >> y ;
+    if (cin.fail())
+       {
+        cout <<"\n\n Invalid Input! \n\n";
+         cin.clear();
+         cin.ignore(1000,'\n');
+       }
+    else 
+    {    
+        cout << "Enter an operator (+, -, *, / ):";
+
+        cin >> op;
+    
+     if (op == '+')
+         {
+             cout << "The sum of " << x << " and " << y <<" is " << x+y << "\n";
+         }
+     else if (op == '-')
+         {
+         cout << "The Difference of " <<x << " and " << y <<" is " << x-y << endl;
+         }
+     else if (op == '*')    
+     {
+         cout << " The product of " << x <<" and " << y <<" is " << x*y << endl ;
+     }
+     else if (op == '/')
+     {
+         if(y != 0)
+             {
+                 cout << "The quotient of " << x <<" and " << y << " is " << x/y << endl ;
+             }
+         else
+             {
+                 cout << " Division By zero is not allowed " << endl;
+             }
+      }
+        else 
+      {
+            cout <<" Invalid Operator \n";
+            cin.clear ();
+            cin.ignore (1000,'\n');
+        }
+    }
+    }
+}
+void infiniteNamePrint()
+{
+    string nameOfUser;
+
+        cout <<"=================================\n";
+        cout <<"WARNING! This Program is infinite\n";
+        cout <<"Press Ctrl + c to froce close\n";
+        cout <<"=================================\n\n";
+
+        // to clear the buffer which is needed when using getline command
+            cin.ignore(1000, '\n');  
+
+
+        cout <<"Enter Your Name: ";
+        getline (cin, nameOfUser);
+
+
+    while(1)
+    {
+        cout << nameOfUser <<"\n";
+
+    }
 
 
 
 
-// Calculator needs chscking for invalid input 
+}
+void infiniteDiscountCalculator()
+{
+    float purchase,payable;
+    string day;
+        
+    
+        cout <<"=================================\n";
+        cout <<"WARNING! This Program is infinite\n";
+        cout <<"Press Ctrl + c to froce close\n";
+        cout <<"=================================\n\n";
+    
+    while (1)
+    {  
+    
+         cout <<"Enter the total Purchase Amount: $  ";
+         cin >> purchase;
+         cout <<"Enter the day of Purchase: ";
+         cin >> day;
+         if (day == "Sunday" || day == "sunday" || day == "SUNDAY")
+        {
+         payable = purchase - (purchase * 10) / 100;
+         cout <<"Payable Amount: "<< payable;
+        }
+        else 
+      {
+        payable = purchase - (purchase * 5) / 100;
+        cout <<"Payable Amount: "<< payable <<"\n";
+       } 
+    }
+}
+
+ 
+
+
+
+
 // if (cin.fail() ||  <= 0 )
 //        {
 //         cout <<"\n\n Invalid Input! \n\n";
@@ -391,3 +513,10 @@ void discountCalculator2()
 //     {    }
 // and for discount calculator we need to change the if == sunday so that
 //  it doesnt apply discount when user enters smth like fajskdfha
+
+
+
+//         cout <<"=================================\n";
+//         cout <<"WARNING! This Program is infinite\n";
+//         cout <<"Press Ctrl + c to froce close\n";
+//         cout <<"=================================\n\n";

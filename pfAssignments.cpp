@@ -1,11 +1,13 @@
 // Header files
+
 #include <iostream>
 #include <string>
 
+
 using namespace std;
 
-
 // Function Prototypes
+
 void userInterface(int &userSelection);
 void fuelCalculator();
 void inchesToFeet();
@@ -18,7 +20,8 @@ void discountCalc();
 void fuelCalculator2();
 void discountCalculator2();
 void infiniteCalculator();
-void infiniteNamePrint();
+void infiniteMyNamePrint();
+void userNamePrint();
 void infiniteDiscountCalculator();
 
 
@@ -83,18 +86,20 @@ while(repeatProgram=='y')
     }
     else if (userSelection == 12)
     {
-        infiniteNamePrint();
+        infiniteMyNamePrint();
     }
     else if (userSelection == 13)
     {
+        userNamePrint();
+    }
+    else if (userSelection == 14)
+    {
         infiniteDiscountCalculator();
     }
-    // else if (userSelection == 14)
-    // {
-    //     return 0;
-    // }
     else
     {
+        //To Clear the Buffer so that user dont face any problems when repeating the program
+
         cin.clear();
         cin.ignore(1000, '\n');
     }
@@ -105,6 +110,8 @@ return 0;
 }
 
 // Functions Declerations
+
+// User Interface
 void userInterface(int &userSelection)
 {
     bool condition=true;
@@ -121,12 +128,13 @@ void userInterface(int &userSelection)
     cout<<"Enter 9  for fuel calculator 2.0 \n";
     cout<<"Enter 10 for Discount Calculator 2.0 \n";
     cout<<"Enter 11 for Infinite-Calcilator \n";
-    cout<<"Enter 12 for infinite-Name Printing \n";
-    cout<<"Enter 13 for infinite-Discount Calculator \n";
-    // cout<<"Enter 14 for _________ \n";
+    cout<<"Enter 12 for Infinite My Name Printing \n";
+    cout<<"Enter 13 for User's-Name Printing \n";
+    cout<<"Enter 14 for infinite-Discount Calculator \n";
+    
     cout<<"Enter Here:  ";
     cin >> userSelection;
-    if (cin.fail() || userSelection < 1 || userSelection > 13)
+    if (cin.fail() || userSelection < 1 || userSelection > 14)
        {
          condition = true;
          cout <<"\n\n Invalid Input! \n\n";
@@ -139,22 +147,28 @@ void userInterface(int &userSelection)
         }
    }
 }
+
+// All Programs
 void fuelCalculator()
 {
     float distance,fuel;
     
     cout <<"Enter Distance in km: ";
     cin >> distance;
+
+    // in case if user enters non float datatype
     if (cin.fail() || distance < 0 )
        {
-        cout <<"\n\n Invalid Input! \n\n";
+         cout <<"\n\n Invalid Input! \n\n";
+         
          cin.clear();
          cin.ignore(1000,'\n');
        }
     else 
     {    
-    fuel = distance * 10;
-    cout <<"The Fuel Needed is "<< fuel <<" litres";
+        fuel = distance * 10;
+        
+        cout <<"The Fuel Needed is "<< fuel <<" litres";
     }
 }
 void inchesToFeet()
@@ -166,15 +180,16 @@ void inchesToFeet()
     cin >> inch;
     if (cin.fail() || inch < 0 )
        {
-        cout <<"\n\n Invalid Input! \n\n";
-         cin.clear();
-         cin.ignore(1000,'\n');
+            cout <<"\n\n Invalid Input! \n\n";
+         
+            cin.clear();
+            cin.ignore(1000,'\n');
        }
     else 
     {    
-    feet=inch/12.0;
+            feet=inch/12.0;
     
-    cout <<"Measurement in feets is "<< feet <<" ft";
+            cout <<"Measurement in feets is "<< feet <<" ft";
     }
 }
 void rubixCube()
@@ -186,15 +201,16 @@ void rubixCube()
     cin >> sides;
     if (cin.fail() || sides <= 0 )
        {
-        cout <<"\n\n Invalid Input! \n\n";
-         cin.clear();
-         cin.ignore(1000,'\n');
+            cout <<"\n\n Invalid Input! \n\n";
+            
+            cin.clear();
+            cin.ignore(1000,'\n');
        }
     else 
     {    
-    stickers = 6* (sides*sides);
+            stickers = 6* (sides*sides);
     
-    cout << "Number of stickers Needed : "<< stickers;
+            cout << "Number of stickers Needed : "<< stickers;
     }
 }
 void calculator()
@@ -224,26 +240,27 @@ void calculator()
          }
      else if (op == '-')
          {
-         cout << "The Difference of " <<x << " and " << y <<" is " << x-y << endl;
+            cout << "The Difference of " <<x << " and " << y <<" is " << x-y << endl;
          }
      else if (op == '*')    
-     {
-         cout << " The product of " << x <<" and " << y <<" is " << x*y << endl ;
-     }
+        {
+            cout << " The product of " << x <<" and " << y <<" is " << x*y << endl ;
+        }
      else if (op == '/')
-     {
-         if(y != 0)
+        {
+            if(y != 0)
              {
                  cout << "The quotient of " << x <<" and " << y << " is " << x/y << endl ;
              }
-         else
+            else
              {
                  cout << " Division By zero is not allowed " << endl;
              }
-      }
+        }
         else 
-      {
+        {
             cout <<" Invalid Operator \n";
+            
             cin.clear ();
             cin.ignore (1000,'\n');
         }
@@ -252,13 +269,17 @@ void calculator()
 void vote()
 {
     int age;
+    
     cout <<"Enter Your Age in Years: ";
     cin >> age;
+    
+    
     if (cin.fail() ||  age < 0 )
        {
-        cout <<"\n\n Invalid Input! \n\n";
-         cin.clear();
-         cin.ignore(1000,'\n');
+            cout <<"\n\n Invalid Input! \n\n";
+            
+            cin.clear();
+            cin.ignore(1000,'\n');
        }
     else 
     {    
@@ -276,46 +297,50 @@ void vote()
 void passOrFail()
 {
     int score;
+    
     cout<<"Enter Your Test score out of Hundred: ";
     cin >> score;
+    
     if (cin.fail() ||  score < 0 )
        {
-        cout <<"\n\n Invalid Input! \n\n";
-         cin.clear();
-         cin.ignore(1000,'\n');
+            cout <<"\n\n Invalid Input! \n\n";
+             cin.clear();
+            cin.ignore(1000,'\n');
        }
     else 
     {    
-    if(score > 50)
-        {
-            cout <<"Pass";
-        } 
-    else
-        {
-            cout<<"Fail";
-        }
+        if(score > 50)
+            {
+                cout <<"Pass";
+            } 
+        else
+            {
+                cout<<"Fail";
+            }
     }
 }
 void evenOdd()
 {
     int num;
+    
     cout <<"Enter a Number: ";
     cin >> num;
+    
     if ( cin.fail() )
        {
-        cout <<"\n\n Invalid Input! \n\n";
-         cin.clear();
-         cin.ignore(1000,'\n');
+            cout <<"\n\n Invalid Input! \n\n";
+             cin.clear();
+            cin.ignore(1000,'\n');
        }
     else 
     {    
         if (num % 2 == 0)
         {
-        cout<<"Number "<< num <<" is even. ";
+            cout<<"Number "<< num <<" is even. ";
         }
         else
         {
-        cout<<"Number "<< num <<" is odd. ";
+            cout<<"Number "<< num <<" is odd. ";
         }
     }
 }
@@ -323,10 +348,13 @@ void discountCalc()
 {
     float purchase,payable;
     string day;
+    
     cout <<"Enter the total Purchase Amount: $  ";
     cin >> purchase;
+    
     cout <<"Enter the day of Purchase: ";
     cin >> day;
+    
     if (day == "Sunday" || day == "sunday" || day == "SUNDAY")
     {
         payable = purchase - (purchase * 10) / 100;
@@ -343,15 +371,17 @@ void fuelCalculator2()
 
     cout <<"Enter Distance in km: ";
     cin >> distances;
+    
     if (cin.fail() ||  distances < 0 )
        {
-        cout <<"\n\n Invalid Input! \n\n";
-         cin.clear();
-         cin.ignore(1000,'\n');
+            cout <<"\n\n Invalid Input! \n\n";
+            cin.clear();
+            cin.ignore(1000,'\n');
        }
     else 
     {    
         fuels = distances * 10;
+        
         if (fuels >= 100)
         {
             cout <<"The Fuel Needed is "<< fuels <<" litres";
@@ -366,10 +396,13 @@ void discountCalculator2()
 {
     float purchased,payable2;
     string day2;
+    
     cout <<"Enter the total Purchase Amount: $  ";
     cin >> purchased;
+    
     cout <<"Enter the day of Purchase: ";
     cin >> day2;
+    
     if (day2 == "Sunday" || day2 == "sunday" || day2 == "SUNDAY")
     {
         payable2 = purchased - (purchased * 10) / 100;
@@ -393,46 +426,46 @@ void infiniteCalculator()
 while(1)
     {
   
-    cout << "Enter Two Numbers : ";
+        cout << "Enter Two Numbers : ";
     
-    cin >> x >> y ;
+        cin >> x >> y ;
+        
     if (cin.fail())
-       {
-        cout <<"\n\n Invalid Input! \n\n";
-         cin.clear();
-         cin.ignore(1000,'\n');
-       }
+        {
+            cout <<"\n\n Invalid Input! \n\n";
+            cin.clear();
+            cin.ignore(1000,'\n');
+        }
     else 
     {    
-        cout << "Enter an operator (+, -, *, / ):";
-
-        cin >> op;
+            cout << "Enter an operator (+, -, *, / ):";
+            cin >> op;
     
-     if (op == '+')
+        if (op == '+')
          {
              cout << "The sum of " << x << " and " << y <<" is " << x+y << "\n";
          }
-     else if (op == '-')
+        else if (op == '-')
          {
-         cout << "The Difference of " <<x << " and " << y <<" is " << x-y << endl;
+             cout << "The Difference of " <<x << " and " << y <<" is " << x-y << endl;
          }
-     else if (op == '*')    
-     {
-         cout << " The product of " << x <<" and " << y <<" is " << x*y << endl ;
-     }
-     else if (op == '/')
-     {
-         if(y != 0)
+        else if (op == '*')    
+        {
+             cout << " The product of " << x <<" and " << y <<" is " << x*y << endl ;
+        }
+        else if (op == '/')
+        {
+             if(y != 0)
              {
                  cout << "The quotient of " << x <<" and " << y << " is " << x/y << endl ;
              }
-         else
+            else
              {
                  cout << " Division By zero is not allowed " << endl;
              }
-      }
+        }
         else 
-      {
+        {
             cout <<" Invalid Operator \n";
             cin.clear ();
             cin.ignore (1000,'\n');
@@ -440,30 +473,24 @@ while(1)
     }
     }
 }
-void infiniteNamePrint()
+void infiniteMyNamePrint()
+{
+    while(true)
+        {
+            cout << "Haroon Usama Siddiqui \n";
+        }
+}
+void userNamePrint()
 {
     string nameOfUser;
 
-        cout <<"=================================\n";
-        cout <<"WARNING! This Program is infinite\n";
-        cout <<"Press Ctrl + c to froce close\n";
-        cout <<"=================================\n\n";
-
-        // to clear the buffer which is needed when using getline command
+        // to clear the buffer-which is needed when using getline command
             cin.ignore(1000, '\n');  
-
 
         cout <<"Enter Your Name: ";
         getline (cin, nameOfUser);
-
-
-    while(1)
-    {
-        cout << nameOfUser <<"\n";
-
-    }
-
-
+    
+        cout <<"\n\n\t" << nameOfUser <<"\n";
 
 
 }
@@ -483,40 +510,19 @@ void infiniteDiscountCalculator()
     
          cout <<"Enter the total Purchase Amount: $  ";
          cin >> purchase;
+         
          cout <<"Enter the day of Purchase: ";
          cin >> day;
-         if (day == "Sunday" || day == "sunday" || day == "SUNDAY")
+         
+        if (day == "Sunday" || day == "sunday" || day == "SUNDAY")
         {
-         payable = purchase - (purchase * 10) / 100;
-         cout <<"Payable Amount: "<< payable;
+            payable = purchase - (purchase * 10) / 100;
+            cout <<"Payable Amount: "<< payable;
         }
         else 
-      {
-        payable = purchase - (purchase * 5) / 100;
-        cout <<"Payable Amount: "<< payable <<"\n";
-       } 
+        {
+            payable = purchase - (purchase * 5) / 100;
+            cout <<"Payable Amount: "<< payable <<"\n";
+        } 
     }
 }
-
- 
-
-
-
-
-// if (cin.fail() ||  <= 0 )
-//        {
-//         cout <<"\n\n Invalid Input! \n\n";
-//          cin.clear();
-//          cin.ignore(1000,'\n');
-//        }
-//     else 
-//     {    }
-// and for discount calculator we need to change the if == sunday so that
-//  it doesnt apply discount when user enters smth like fajskdfha
-
-
-
-//         cout <<"=================================\n";
-//         cout <<"WARNING! This Program is infinite\n";
-//         cout <<"Press Ctrl + c to froce close\n";
-//         cout <<"=================================\n\n";

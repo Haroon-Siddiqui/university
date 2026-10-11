@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-
+//standard namespace
 using namespace std;
 
 // Function Prototypes
@@ -31,11 +31,13 @@ int main()
 // Variable Initializtions and declerations
     int userSelection;
     char repeatProgram='y';
+
 // While loop to repeat the program
-while(repeatProgram=='y')
+while(repeatProgram == 'y' || repeatProgram == 'Y')
 {   
     // Spacing
     cout <<"\n\n";
+
     // Printing User Interface
     userInterface(userSelection);
     
@@ -98,11 +100,13 @@ while(repeatProgram=='y')
     }
     else
     {
-        //To Clear the Buffer so that user dont face any problems when repeating the program
+        //To Clear the Buffer so that user dont face any problems tying to repeat the program
 
         cin.clear();
         cin.ignore(1000, '\n');
     }
+    
+    //user input for program repeatition
     cout << "\n\n Do You Want to repeat The Program (y/n) ";
     cin >> repeatProgram;
 }
@@ -115,7 +119,9 @@ return 0;
 void userInterface(int &userSelection)
 {
     bool condition=true;
-   while (condition)
+   
+    //while loop to account for string and invalid integer input
+    while (condition)
    {
     cout<<"Enter 1  for Fuel Calculator \n";
     cout<<"Enter 2  for Inches to Feet Converter\n";
@@ -127,13 +133,16 @@ void userInterface(int &userSelection)
     cout<<"Enter 8  for Discount Calculator \n";
     cout<<"Enter 9  for fuel calculator 2.0 \n";
     cout<<"Enter 10 for Discount Calculator 2.0 \n";
-    cout<<"Enter 11 for Infinite-Calcilator \n";
+    cout<<"Enter 11 for Infinite-Calculator \n";
     cout<<"Enter 12 for Infinite My Name Printing \n";
     cout<<"Enter 13 for User's-Name Printing \n";
     cout<<"Enter 14 for infinite-Discount Calculator \n";
     
+    //input
     cout<<"Enter Here:  ";
     cin >> userSelection;
+    
+    //in case of invalid input
     if (cin.fail() || userSelection < 1 || userSelection > 14)
        {
          condition = true;
@@ -178,6 +187,8 @@ void inchesToFeet()
     cout <<"Enter Measurement in Inches: ";
     
     cin >> inch;
+
+    // in case if user enters non float datatype
     if (cin.fail() || inch < 0 )
        {
             cout <<"\n\n Invalid Input! \n\n";
@@ -199,6 +210,8 @@ void rubixCube()
     cout <<"Enter the side length of Rubix's cube: ";
     
     cin >> sides;
+
+    // in case if user enters non float datatype
     if (cin.fail() || sides <= 0 )
        {
             cout <<"\n\n Invalid Input! \n\n";
@@ -222,6 +235,8 @@ void calculator()
     cout << "Enter Two Numbers : ";
     
     cin >> x >> y ;
+
+    // in case if user enters non float datatype
     if (cin.fail())
        {
         cout <<"\n\n Invalid Input! \n\n";
@@ -273,7 +288,7 @@ void vote()
     cout <<"Enter Your Age in Years: ";
     cin >> age;
     
-    
+    // in case if user enters non float datatype
     if (cin.fail() ||  age < 0 )
        {
             cout <<"\n\n Invalid Input! \n\n";
@@ -300,7 +315,8 @@ void passOrFail()
     
     cout<<"Enter Your Test score out of Hundred: ";
     cin >> score;
-    
+
+    // in case if user enters non float datatype
     if (cin.fail() ||  score < 0 )
        {
             cout <<"\n\n Invalid Input! \n\n";
@@ -326,6 +342,7 @@ void evenOdd()
     cout <<"Enter a Number: ";
     cin >> num;
     
+    // in case if user enters non integer datatype
     if ( cin.fail() )
        {
             cout <<"\n\n Invalid Input! \n\n";
@@ -477,7 +494,7 @@ void infiniteMyNamePrint()
 {
     while(true)
         {
-            cout << "Haroon Usama Siddiqui \n";
+            cout << "Haroon Usama Siddiqui,CS-93 \n";
         }
 }
 void userNamePrint()
@@ -508,7 +525,7 @@ void infiniteDiscountCalculator()
     while (1)
     {  
     
-         cout <<"Enter the total Purchase Amount: $  ";
+         cout <<"\nEnter the total Purchase Amount: $  ";
          cin >> purchase;
          
          cout <<"Enter the day of Purchase: ";

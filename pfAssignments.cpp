@@ -443,9 +443,13 @@ void infiniteCalculator()
 while(1)
     {
   
-        cout << "Enter Two Numbers : ";
+        cout << "Enter 1st Numbers: ";
     
-        cin >> x >> y ;
+        cin >> x;
+
+        cout << "Enter 2nd Number: ";
+        
+        cin >> y;
         
     if (cin.fail())
         {
